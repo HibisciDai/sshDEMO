@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FancyTeam|loginin.html</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="description" content="FlowerPot-login" />
+    
+    <link rel="Shortcut Icon" href="../img/fancyteamlogo.png" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login-register.css" />
+    <script type="text/JavaScript">		/*用于切换登录方式*/
+    	/*登录方式切换*/
+	    function onclick1() {
+	    	document.getElementById('userlogin').style.display = 'inline';
+	    	document.getElementById('tellogin').style.display = 'none';
+	    	document.getElementById('headera1').className = 'a-header1';
+	    	document.getElementById('headera2').className = 'a-header';
+	    }
+	    function onclick2() {
+			document.getElementById('userlogin').style.display = 'none';
+			document.getElementById('tellogin').style.display = 'inline';
+			document.getElementById('headera1').className = 'a-header';
+			document.getElementById('headera2').className = 'a-header1';
+	    }
+	    /*关于空输入验证*/
+	    function oncheck1() {
+			if (document.getElementById('login-input1').value == null || document.getElementById('login-input1').value == '') {
+				document.getElementById('usernameTip').style.display = 'inline';
+			} else {
+				document.getElementById('usernameTip').style.display = 'none';
+			}
+	    }
+	
+	    function oncheck2() {
+			if (document.getElementById('login-input2').value == null || document.getElementById('login-input2').value == '') {
+				document.getElementById('passwordTip').style.display = 'inline';
+			} else {
+				document.getElementById('passwordTip').style.display = 'none';
+			}			
+	    }
+
+	    function oncheck3() {
+			if (document.getElementById('login-input3').value == null || document.getElementById('login-input3').value == '') {
+				document.getElementById('telTip').style.display = 'inline';
+			} else {
+				document.getElementById('telTip').style.display = 'none';
+			}
+	    }
+
+	    function oncheck4() {
+			if (document.getElementById('login-input4').value == null || document.getElementById('login-input4').value == '') {
+				document.getElementById('codeTip').style.display = 'inline';
+			} else {
+				document.getElementById('codeTip').style.display = 'none';
+			}
+	    }
+	</script>
+    <style>
+		body {
+			background: #FF552E;
+			
+			}
+	</style>
+  </head>
+  
+  <body topmargin="0">	<!--框体顶头-->
+	<!--顶部 start-->
+	<div id="outregBox">
+       	<div id="backtoindex"><a href="#" >返回首页</a></div>
+        <div id="goReg">没有账户？<a href="#" >去注册</a></div>
+    </div>
+    <!--顶部 end-->
+    <!--登录 start-->
+    <div class="div-container">	 <!--container 框架-->
+    	<div class="div-logo">
+    	</div>
+
+   		<div class="div-loginandregister-adiv">
+    		<a id="headera1" class="a-header1" href="javascript:;" onclick="onclick1();">密码账号登录</a>
+        	<a id="headera2" class="a-header" href="javascript:;" onclick="onclick2();">手机动态码登录</a>
+        </div>
+
+        <div class="div-loginandregister-main">		<!--登录-->
+        	<form method="post" action="#">
+
+        		<div id="userlogin">	<!--账号密码登录-->
+		        	<div class="div-logininandregister-inputmain">  <!--用户名-->
+		            	<label id="loginlable1">账号</label>
+		                <input id="login-input1" type="text" name="username" autocomplete="off" placeholder="邮箱/手机/用户名" onblur="oncheck1();" />
+		            </div>
+
+		            <span id="usernameTip" class="wrong1">您还没有输入账号</span>	<!--提示信息-->
+
+		            <div class="div-logininandregister-inputmain" >	<!--密码-->
+		            	<label id="loginlable2">密码</label>
+		                <a id="a-loginin-password" href="#">忘记密码?</a>
+		                <input id="login-input2" name="password" type="password" autocomplete="off" placeholder="请输入密码" onblur="oncheck2();"/>
+		            </div>
+
+					<span id="passwordTip" class="wrong1">您还没有输入密码</span>	<!--提示信息-->
+				</div>
+
+				<div id="tellogin">		<!--手机动态密码登录-->
+					<div class="div-logininandregister-inputmain">	<!--手机号-->
+		            	<label id="loginlable3">手机号</label>
+		                <input id="login-input3" type="text" name="#" size="20" maxlength="11" placeholder="请输入手机号" onblur="oncheck3();"/>
+		                <input type="button" class="getcode" id="loginMobilecodeSendBtn" value="获取动态码">
+		            </div>
+
+		            <span id="telTip" class="wrong1">您还没有输入手机号</span>	<!--提示信息-->
+
+		            <div class="div-logininandregister-inputmain" >	<!--动态码-->
+		            	<label id="loginlable4">动态码</label>
+		                <input id="login-input4" name="#" type="text" size="20" maxlength="6"placeholder="请输入动态码" onblur="oncheck4();"/>
+		                <div class="div-loginin-username-message">	<!--提示信息-->
+		                </div>
+		            </div>
+
+					<span id="codeTip" class="wrong1">您还没有输入动态码</span>	<!--提示信息-->
+				</div>
+
+            
+	            <div class="div-logininandregister-other">	<!--同意条款-->
+	            	<input type="checkbox" name="rememberpassword" />下次自动登录
+	            </div>
+            
+	            <div class="div-loginin-submit">	<!--提交按钮-->
+	            	<button id="div-loginin-submit1" type="submit" name="loginsubmit">登&nbsp;&nbsp;录</button>
+	            </div>   
+        	</form>
+        	
+        	<div id="thirdLogin" class="third-login">
+                <a href="javascript:;" class="qq-login">
+                	<i></i>
+                	<div class="loginspan">QQ登陆</div>
+                	
+                </a>
+                 
+                <a href="javascript:;"  class="wx-login">
+                	<i></i>
+                	<div class="loginspan">微信登录</div>
+                	
+                </a>
+                 
+                <a href="javascript:;" class="wb-login">
+	                <i></i>
+	                <div class="loginspan">微博登录</div>
+	                
+                </a>
+             </div>
+        </div>
+    </div>
+	
+    <!--登录 end-->
+    
+  </body>
+</html>

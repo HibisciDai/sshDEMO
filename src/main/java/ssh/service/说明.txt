@@ -1,0 +1,3 @@
+Dao注重数据持久 可以抽取一个service层
+service层不能抽取baseService ， 因为service要注重于业务逻辑，每一个service的业务逻辑基本不一致
+

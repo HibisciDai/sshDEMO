@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FancyTeam|register.html</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="description" content="FlowerPot-login" />
+    
+    <link rel="Shortcut Icon" href="../img/fancyteamlogo.png" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login-register.css" />
+    <script type="text/JavaScript">	
+	    /*关于空输入验证*/
+	    function oncheck1() {
+			if (document.getElementById('login-input1').value == null || document.getElementById('login-input1').value == '') {
+				document.getElementById('telTip').style.display = 'inline';
+			} else {
+				document.getElementById('telTip').style.display = 'none';
+			}
+	    }
+	
+	    function oncheck2() {
+			if (document.getElementById('login-input2').value == null || document.getElementById('login-input2').value == '') {
+				document.getElementById('codeTip').style.display = 'inline';
+			} else {
+				document.getElementById('codeTip').style.display = 'none';
+			}			
+	    }
+
+	    function oncheck3() {
+			if (document.getElementById('login-input3').value == null || document.getElementById('login-input3').value == '') {
+				document.getElementById('usernameTip').style.display = 'inline';
+			} else {
+				document.getElementById('usernameTip').style.display = 'none';
+			}
+	    }
+
+	    function oncheck4() {
+			if (document.getElementById('login-input4').value == null || document.getElementById('login-input4').value == '') {
+				document.getElementById('passwordTip').style.display = 'inline';
+			} else {
+				document.getElementById('passwordTip').style.display = 'none';
+			}
+	    }
+	   	function oncheck5() {
+			if (document.getElementById('login-input5').value == null || document.getElementById('login-input5').value == '') {
+				document.getElementById('password2Tip').style.display = 'inline';
+			} else {
+				document.getElementById('password2Tip').style.display = 'none';
+			}
+	    }
+	</script>
+    <style>
+		body {
+			background: #FF552E;
+			
+			}
+	</style>
+  </head>
+  
+  <body topmargin="0">	<!--框体顶头-->
+	<!--顶部 start-->
+	<div id="outregBox">
+       	<div id="backtoindex"><a href="#" >返回首页</a></div>
+        <div id="goReg">没有账户？<a href="#" >去登录</a></div>
+    </div>
+    <!--顶部 end-->
+    <!--注册 start-->
+    <div class="div-container">	 <!--container 框架-->
+    	<div class="div-logo">
+    	</div>
+
+        <div class="div-loginandregister-main">		<!--注册-->
+        	<form method="post" action="#">
+				<div class="div-logininandregister-inputmain">	<!--手机号-->
+	            	<label id="loginlable1">手机号</label>
+	                <input id="login-input1" type="text" name="#" size="20" maxlength="11" placeholder="请输入手机号" onblur="oncheck1();"/>
+	                <input type="button" class="getcode" id="loginMobilecodeSendBtn" value="获取动态码">
+	            </div>
+
+	            <span id="telTip" class="wrong1">您还没有输入手机号</span>	<!--提示信息-->
+
+	            <div class="div-logininandregister-inputmain" >	<!--动态码-->
+	            	<label id="loginlable2">动态码</label>
+	                <input id="login-input2" name="#" type="text" size="20" maxlength="6"placeholder="请输入动态码" onblur="oncheck2();"/>
+	                <div class="div-loginin-username-message">	<!--提示信息-->
+	                </div>
+	            </div>
+
+				<span id="codeTip" class="wrong1">您还没有输入动态码</span>	<!--提示信息-->
+
+	        	<div class="div-logininandregister-inputmain">  <!--用户名-->
+	            	<label id="loginlable3">用户名</label>
+	                <input id="login-input3" type="text" name="username" autocomplete="off" placeholder="请输入用户名" onblur="oncheck3();" />
+	            </div>
+
+	            <span id="usernameTip" class="wrong1">您还没有输入用户名</span>	<!--提示信息-->
+
+	            <div class="div-logininandregister-inputmain" >	<!--密码-->
+	            	<label id="loginlable4">密码</label>
+	                <input id="login-input4" name="password" type="password" autocomplete="off" placeholder="请输入密码" onblur="oncheck4();"/>
+	            </div>
+
+				<span id="passwordTip" class="wrong1">您还没有输入密码</span>	<!--提示信息-->
+
+				<div class="div-logininandregister-inputmain" >	<!--重复密码-->
+	            	<label id="loginlable5">确认密码</label>
+	                <input id="login-input5" name="password2" type="password" autocomplete="off" placeholder="请确认密码" onblur="oncheck5();"/>
+	            </div>
+
+				<span id="password2Tip" class="wrong1">您还没有输入确认密码</span>	<!--提示信息-->
+            
+	            <div class="div-logininandregister-other">	<!--同意条款-->
+	            	<input type="checkbox" name="rememberpassword" />
+	            	<span>我已阅读并同意
+                        <a id="regAgreement" target="_blank" href="#">《58同城使用协议》</a>
+                    </span>
+	            </div>
+            
+	            <div class="div-loginin-submit">	<!--提交按钮-->
+	            	<button id="div-loginin-submit1" type="submit" name="loginsubmit">登&nbsp;&nbsp;录</button>
+	            </div>   
+        	</form>
+        </div>
+    </div>
+	
+    <!--注册 end-->
+    
+  </body>
+</html>
